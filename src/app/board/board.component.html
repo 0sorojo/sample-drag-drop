@@ -1,0 +1,36 @@
+<section class="organizer" cdkDropListGroup>
+  <div
+    cdkDropList
+    [cdkDropListData]="numbers"
+    (cdkDropListDropped)="drop($event)"
+    #firstList="cdkDropList"
+    class="container"
+  >
+    <div cdkDrag *ngFor="let number of numbers" class="item">
+      <div class="cdk-drag-placeholder" *cdkDragPlaceHolder></div>
+      {{ number }}
+    </div>
+  </div>
+  <div
+    cdkDropList
+    [cdkDropListData]="otherNumbers"
+    (cdkDropListDropped)="drop($event)"
+    #otherList="cdkDropList"
+    class="container"
+  >
+    <div cdkDrag *ngFor="let number of otherNumbers" class="item">
+      {{ number }}
+    </div>
+  </div>
+  <div
+    cdkDropList
+    [cdkDropListData]="doneNumbers"
+    (cdkDropListDropped)="drop($event)"
+    #doneList="cdkDropList"
+    class="container"
+  >
+    <div cdkDrag *ngFor="let number of doneNumbers" class="item">
+      {{ number }}
+    </div>
+  </div>
+</section>
